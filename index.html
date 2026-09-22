@@ -1,0 +1,109 @@
+
+<head>
+  <title>My First Page</title>
+  <style>
+    body { margin: 0; padding: 0; }
+    #map { height: 500px; width: 100%; }
+  </style>
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+  <h1>Hello, this is my page</h1>
+  <div id="map"></div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    // Initialize the map
+    var map = L.map('map').setView([33.6844, 73.0479], 10); // Coordinates for Islamabad, Pakistan
+
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Add a marker
+    L.marker([33.6844, 73.0479]).addTo(map)
+      .bindPopup('Hello from Islamabad!')
+      .openPopup();
+  </script>
+</body>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+  var map = L.map('map').setView([30.1798, 66.9750], 13); // Quetta coordinates
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+</script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+  var map = L.map('map').setView([30.1798, 66.9750], 13); // Quetta coordinates
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+</script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+  var map = L.map('map').setView([30.1798, 66.9750], 13); // Quetta coordinates
+
+  // Street map layer (OpenStreetMap)
+  var streetLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+  });
+
+  // Satellite imagery layer (Esri World Imagery)
+  var satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Tiles &copy; Esri &mdash; Source: Esri, Maxar, Earthstar Geographics'
+  });
+
+  // Show satellite by default (change to streetLayer if you prefer street view first)
+  satelliteLayer.addTo(map);
+
+  // Layer switch control (top-right corner)
+  var baseMaps = {
+    "Street Map": streetLayer,
+    "Satellite": satelliteLayer
+  };
+  L.control.layers(baseMaps).addTo(map);
+</script>
+<head>
+  <title>My First Page</title>
+  <style>
+    body { margin: 0; padding: 0; }
+    #map { height: 500px; width: 100%; }
+  </style>
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+  <h1>Hello, this is my page</h1>
+  <div id="map"></div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    // Initialize the map centered on NUST
+    var map = L.map('map').setView([33.6426, 72.9906], 15); 
+    // Coordinates for NUST Islamabad
+
+    // Add satellite imagery tiles (from Esri)
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+      attribution: 'Tiles © Esri &mdash; Source: Esri, Maxar, Earthstar Geographics'
+    }).addTo(map);
+
+    // Add a marker at NUST
+    L.marker([33.6426, 72.9906]).addTo(map)
+      .bindPopup('NUST Islamabad')
+      .openPopup();
+  </script>
+</body>
+
+  // Add a marker
+  var marker = L.marker([30.1798, 66.9750]).addTo(map);
+  marker.bindPopup("<b>Quetta</b><br>This is my project location.").openPopup();
+  
+git init
+git add .
+git commit -m "First version of my map page"
+git branch -M main
+git remote add origin https://github.com/YOUR-USERNAME/my-first-map.git
+git push -u origin main
+
